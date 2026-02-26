@@ -1,0 +1,83 @@
+:root {
+  --bg: #f4f4f4;
+  --calc: #ffffff;
+  --btn: #e0e0e0;
+  --operator: #ff9500;
+  --text: #000;
+}
+
+body.dark {
+  --bg: #121212;
+  --calc: #1e1e1e;
+  --btn: #2c2c2c;
+  --text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.calculator {
+  background: var(--calc);
+  padding: 20px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#display {
+  width: 100%;
+  font-size: 2rem;
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: right;
+  border: none;
+  background: transparent;
+  color: var(--text);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 18px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button[data-value="/"],
+button[data-value="*"],
+button[data-value="-"],
+button[data-value="+"],
+button[data-value="%"] {
+  background: var(--operator);
+  color: white;
+}
+
+.equal {
+  grid-column: span 2;
+  background: #28a745;
+  color: white;
+}
+
+.top-bar {
+  text-align: right;
+  margin-bottom: 5px;
+}
